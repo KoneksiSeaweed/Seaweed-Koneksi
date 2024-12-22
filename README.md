@@ -66,7 +66,7 @@ Segmentation results for each model are visualized to demonstrate their ability 
 ![model_inference_full_2](https://github.com/user-attachments/assets/64a51ba5-6af9-45c4-9a8b-80be43480c71)
 
 ## License
-- This dataset is made available under the MIT license, freely available for both academic and commercial use. <br/>
+- This dataset is made available under the MIT license, freely available for both academic and commercial use. See the [LICENSE](./LICENSE) file for details.
 - Access to Sentinel data is free, full and open for the broad Regional, National, European and International user community. View [Terms and Conditions](https://scihub.copernicus.eu/twiki/do/view/SciHubWebPortal/TermsConditions).
 - Access to Planet data is restricted. View [Terms of Use](https://www.planet.com/terms-of-use/).
 - The EULA for Pleiades imagery includes restrictions on how the imagery can be used. View [Terms and Conditions](https://space-solutions.airbus.com/legal/terms-and-conditions/)
