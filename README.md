@@ -2,7 +2,10 @@
 Semantic segmentation models for seaweed cultivation based on remote sensing imagery
 
 ## Project Overview
-This project focuses on the development of semantic segmentation models for identifying seaweed cultivation areas using remote sensing images. The benchmark dataset and models aim to provide a foundation for researchers and practitioners in the field of precision aquaculture and environmental monitoring.
+This project is the part of KONEKSI project which is "Developing applications of satellite imagery for modelling environmental and social impacts of climate change on seaweed farming in Indonesia".
+This research focuses on the development of semantic segmentation models for identifying seaweed cultivation areas using remote sensing images. We has compiled a multiscale benchmark dataset from various remote sensing platforms for mapping seaweed cultivation. This benchmark dataset serves as a foundational resource for future monitoring for sustainable seaweed cultivation mapping using deep learning techniques. However, collecting benchmark data poses significant challenges, as each type of imagery has its own strengths and limitations in terms of spatial, spectral, and temporal resolution. Consequently, creating high-quality seaweed labels requires specific treatments tailored to these characteristics. 
+
+The results of this research are still being compiled into an article. This will be updated in the future.
 
 ## Benchmark Dataset
 ![PREVIEW BENCHMARK](https://github.com/user-attachments/assets/417bc8b8-b73a-476a-8312-e29a248197e8)
@@ -19,6 +22,14 @@ Each dataset is provided in `.tiff` format with an image size of `128x128` pixel
 - **Class 1**: Seaweed
 
 The labels were generated using the [Segment Anything Model (SAM)](https://github.com/facebookresearch/segment-anything), ensuring high-quality segmentation of seaweed cultivation areas.
+
+## Data Access
+The dataset can be downloaded below:
+- [Sentinel-2](https://drive.google.com/file/d/19V_Vq6IHc2o5fz7prUpGYKsSFyBOxnJf/view?usp=sharing)
+- [PlanetScope](https://drive.google.com/file/d/1XuiVnLhOY4yxAwRc7Ywb3c7btcXZ2JGw/view?usp=sharing)
+- [Pleiades](https://drive.google.com/file/d/1VgnWq51-m0_pc7ZyDHpLhrTXwWa-24qS/view?usp=sharing)
+
+However, we cannot share all of the datasets freely. This is related to the license of the image. Here the sentinel-2 imagery is freely accessible. But for PlanetScope and Pleiades images, please request access in advance.
 
 ## Model Training
 To evaluate the benchmark dataset, we trained multiple deep learning architectures for semantic segmentation. The models include:
@@ -51,49 +62,18 @@ We summarize the model training results from each benchmark dataset by showing t
 
 
 ### Visualization
-Segmentation results for each model are visualized to demonstrate their ability to identify seaweed cultivation areas. The visualizations include each images and model predictions.
-
-## Model Inference
-Inference can be performed on new remote sensing images using the trained models. The output can be saved as:
-
-1. **Geo-referenced raster files** (with coordinate transformations)
-2. **PNG images**
-
-## Getting Started
-### Requirements
-- Python 3.8+
-- PyTorch
-- torchvision
-- segmentation-models-pytorch
-- GDAL (for raster processing)
-
-### Installation
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/your-repo/seaweed-segmentation.git
-   cd seaweed-segmentation
-   ```
-2. Install the required Python libraries:
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-### Running Inference
-To run inference on a new image:
-1. Prepare the input image in `.tiff` format.
-2. Run the inference script:
-   ```bash
-   python inference.py --input your_image.tiff --model trained_model.pth --output output_file.png
-   ```
-
-## Contributions
-Contributions to improve the dataset, models, or training pipeline are welcome. Feel free to submit issues or pull requests.
+Segmentation results for each model are visualized to demonstrate their ability to identify seaweed cultivation areas. The visualizations include each images and model predictions. Our visualization shows the results of the inference model using one of the testing data.
+![model_inference_full_2](https://github.com/user-attachments/assets/64a51ba5-6af9-45c4-9a8b-80be43480c71)
 
 ## License
-This project is licensed under the MIT License. See the LICENSE file for details.
+- This dataset is made available under the MIT license, freely available for both academic and commercial use. <br/>
+- Access to Sentinel data is free, full and open for the broad Regional, National, European and International user community. View [Terms and Conditions](https://scihub.copernicus.eu/twiki/do/view/SciHubWebPortal/TermsConditions).
+- Access to Planet data is restricted. View [Terms of Use](https://www.planet.com/terms-of-use/).
+- The EULA for Pleiades imagery includes restrictions on how the imagery can be used. View [Terms and Conditions](https://space-solutions.airbus.com/legal/terms-and-conditions/)
+
+## Contact
+[email](mailto:koneksiseaweed@gmail.com)
 
 ## Acknowledgments
-- Sentinel-2, PlanetScope, and Pleiades datasets for providing the imagery.
-- Segment Anything Model for label generation.
-- PyTorch Segmentation Models library for model implementations.
+This research has been funded by the Department of Foreign Affairs and Trade Australia through KONEKSI. The views expressed in this research are the authors’ alone and are not necessarily the views of the Australian Government.
 
