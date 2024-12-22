@@ -5,11 +5,13 @@ Semantic segmentation models for seaweed cultivation based on remote sensing ima
 This project focuses on the development of semantic segmentation models for identifying seaweed cultivation areas using remote sensing images. The benchmark dataset and models aim to provide a foundation for researchers and practitioners in the field of precision aquaculture and environmental monitoring.
 
 ## Benchmark Dataset
+![PREVIEW BENCHMARK](https://github.com/user-attachments/assets/417bc8b8-b73a-476a-8312-e29a248197e8)
+
 The benchmark dataset consists of remote sensing images from three different sources:
 
-1. **Sentinel-2** : Multispectral imagery with a spatial resolution of 10 meters.
-2. **PlanetScope** : High-resolution imagery with a spatial resolution of 3 meters.
-3. **Pleiades** : Very high-resolution imagery with a spatial resolution of 0.5 meters.
+1. **Sentinel-2** : <br/> Multispectral imagery with a spatial resolution of 10 meters. The processing level is L2A or Bottom-of-atmosphere (BOA) reflectance. The channels include `B4, B3, B2, and B8` (Red, Green, Blue, and NIR).
+2. **PlanetScope** : <br/> High-resolution imagery with a spatial resolution of 3 meters. The PlanetScope SuperDove `(PSB.SD)` sensor has been corrected to surface reflectance and harmonized. Here we use an 8-channel PlanetScope image, which we then reduce so that only `B2, B3, and B6` (Blue, Green, and NIR) channels remain.
+3. **Pleiades** : <br/> Very high-resolution imagery with a spatial resolution of 2 meters. We have applied the orthorectification process to this image. Pleiades imagery includes four channels: `B1, B2, B3, and B4` (Red, Green, Blue, and NIR).
 
 Each dataset is provided in `.tiff` format with an image size of `128x128` pixels. The dataset includes corresponding label files for each image, where:
 
@@ -32,26 +34,24 @@ Some of these architectures are implemented using the [Segmentation Models PyTor
 
 ## Results
 ### Training metrics
-The training results of each model are summarized below. The performance metrics include accuracy, loss, and Intersection over Union (IoU) for both seaweed and non-seaweed classes.
+For model training, we use several types of encoders such as ResNet34 and Efficient-Net. Then, for model optimization we use the Adaptive Moment Estimation (ADAM) optimization algorithm and combine it with various loss functions such as Binary Cross Entropy (BCE) or Dice Loss. Model performance is calculated based on several evaluation metrics such as accuracy, loss, and Intersection over Union (IoU). 
+We summarize the model training results from each benchmark dataset by showing the top three model performances below. 
 
-
-| Benchmark   | Model          | Accuracy (Training) | Loss (Training) | IoU (Training) | Accuracy (Testing) | Loss (Testing) | IoU (Testing) |
-|-------------|----------------|---------------------|-----------------|----------------|--------------------|----------------|---------------|
-| Sentinel-2  | U-Net          | 92.3%               | 0.15            | 85.7%          | 90.1%              | 0.18           | 83.2%         |
-| Sentinel-2  | DeepLabv3+     | 93.5%               | 0.12            | 87.9%          | 91.4%              | 0.16           | 85.0%         |
-| PlanetScope | U-Net++        | 91.0%               | 0.17            | 84.2%          | 88.5%              | 0.20           | 81.6%         |
-| Pleiades    | TransUNet      | 94.2%               | 0.10            | 89.3%          | 92.7%              | 0.13           | 87.8%         |
-
-
-- **Accuracy**
-- **IoU (Intersection over Union)**
-- **Dice Coefficient**
-
-A detailed comparison of these metrics across datasets and models is provided in the results folder.
+| Benchmark   | Model          |Encoder         | Accuracy (Training) | Loss (Training) | IoU (Training) | Accuracy (Testing) | Loss (Testing) | IoU (Testing) |
+|-------------|----------------|----------------|---------------------|-----------------|----------------|--------------------|----------------|---------------|
+| Sentinel-2  | U-Net          | None           | 99.35%              | 0.02            | 84.51%         | 97.39%             | 0.16           | 44.03%        |
+| Sentinel-2  | U-Net++        | ResNet34       | 98.82%              | 0.17            | 73.69%         | 97.21%             | 0.46           | 40.75%        |
+| Sentinel-2  | DeepLabv3+     | ResNet34       | 98.65%              | 0.19            | 70.53%         | 97.01%             | 0.47           | 40.26%        |
+| PlanetScope | U-Net          | None           | 98.42%              | 0.04            | 82.73%         | 94.11%             | 0.29           | 41.29%        |
+| PlanetScope | U-Net++        | Effecient-Net  | 96.95%              | 0.20            | 68.87%         | 94.21%             | 0.40           | 43.82%        |
+| PlanetScope | TransU-Net     | Effecient-Net  | 96.70%              | 0.21            | 67.69%         | 93.78%             | 0.41           | 43.09%        |
+| Pleiades    | DeepLabv3+     | Effecient-Net  | 99.42%              | 0.05            | 92.17%         | 98.73%             | 0.11           | 83.04%        |
+| Pleiades    | U-Net++        | Effecient-Net  | 99.25%              | 0.06            | 90.04%         | 98.67%             | 0.11           | 82.73%        |
+| Pleiades    | PAN            | Effecient-Net  | 99.42%              | 0.05            | 92.19%         | 98.67%             | 0.11           | 82.53%        |
 
 
 ### Visualization
-Segmentation results for each model are visualized to demonstrate their ability to identify seaweed cultivation areas. The visualizations include ground truth labels, model predictions, and overlay comparisons.
+Segmentation results for each model are visualized to demonstrate their ability to identify seaweed cultivation areas. The visualizations include each images and model predictions.
 
 ## Model Inference
 Inference can be performed on new remote sensing images using the trained models. The output can be saved as:
