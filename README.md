@@ -77,8 +77,8 @@ Segmentation results for each model are visualized to demonstrate their ability 
 ## Author
 The authors for this project are: Marzuki, Nur Laila, Sanjiwana Arjasakusuma, and Pramaditya Wicaksono from Department of Geographic Information Science, Faculty of Geography, Universitas Gadjah Mada
 
-## Data Access
-Free data such as Sentinel-2 and UAV dataset can be shared. Link will be provided. For licensed data such as PlanetScope, and Pleaides data, permission should be asked directly to the author by email.
+## Data and Model Access
+Free data such as Sentinel-2 and UAV dataset can be shared. Link will be provided. For licensed data such as PlanetScope, and Pleaides data, permission should be asked directly to the author by email. Pre-trained model for all of the data can be accessed from this github page. 
 
 ## Acknowledgments
 This research has been funded by the Department of Foreign Affairs and Trade Australia through KONEKSI. The views expressed in this research are the authors’ alone and are not necessarily the views of the Australian Government.
