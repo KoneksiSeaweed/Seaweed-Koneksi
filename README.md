@@ -23,14 +23,6 @@ Each dataset is provided in `.tiff` format with an image size of `128x128` pixel
 
 The labels were generated using the [Segment Anything Model (SAM)](https://github.com/facebookresearch/segment-anything), ensuring high-quality segmentation of seaweed cultivation areas.
 
-## Data Access
-The dataset can be downloaded below:
-- [Sentinel-2](https://drive.google.com/file/d/19V_Vq6IHc2o5fz7prUpGYKsSFyBOxnJf/view?usp=sharing)
-- [PlanetScope](https://drive.google.com/file/d/1XuiVnLhOY4yxAwRc7Ywb3c7btcXZ2JGw/view?usp=sharing)
-- [Pleiades](https://drive.google.com/file/d/1VgnWq51-m0_pc7ZyDHpLhrTXwWa-24qS/view?usp=sharing)
-
-However, we cannot share all of the datasets freely. This is related to the license of the image. Here the sentinel-2 imagery is freely accessible. But for PlanetScope and Pleiades images, please request access in advance.
-
 ## Model Training
 To evaluate the benchmark dataset, we trained multiple deep learning architectures for semantic segmentation. The models include:
 
@@ -78,7 +70,17 @@ Segmentation results for each model are visualized to demonstrate their ability 
 The authors for this project are: Marzuki, Nur Laila, Sanjiwana Arjasakusuma, and Pramaditya Wicaksono from Department of Geographic Information Science, Faculty of Geography, Universitas Gadjah Mada
 
 ## Data and Model Access
-Free data such as Sentinel-2 and UAV dataset can be shared. Link will be provided. For licensed data such as PlanetScope, and Pleaides data, permission should be asked directly to the author by email. Pre-trained model for all of the data can be accessed from this github page. 
+Free data such as Sentinel-2 and UAV dataset can be shared. Link will be provided. For licensed data such as PlanetScope, and Pleaides data, permission should be asked directly to the author by email. Pre-trained model for all of the data can be accessed from this link below. 
+
+The dataset can be downloaded below:
+- [Sentinel-2](https://drive.google.com/file/d/19V_Vq6IHc2o5fz7prUpGYKsSFyBOxnJf/view?usp=sharing)
+- [PlanetScope](https://drive.google.com/file/d/1XuiVnLhOY4yxAwRc7Ywb3c7btcXZ2JGw/view?usp=sharing)
+- [Pleiades](https://drive.google.com/file/d/1VgnWq51-m0_pc7ZyDHpLhrTXwWa-24qS/view?usp=sharing)
+
+The Pre-trained model can be downloaded below:
+- [Sentinel-2](https://drive.google.com/drive/folders/1DUVEk6oqUyNA_IOdUfGDuT1SN86ItS4c?usp=sharing)
+- [PlanetScope](https://drive.google.com/drive/folders/17kDbLQUPgKBwiBRKO_TdPYSe8suiZpcF?usp=sharing)
+- [Pleiades](https://drive.google.com/drive/folders/14o-JTIRXYeXqX4mwiSJ957myEC_r6Bnk?usp=sharing)
 
 ## Acknowledgments
 This research has been funded by the Department of Foreign Affairs and Trade Australia through KONEKSI. The views expressed in this research are the authors’ alone and are not necessarily the views of the Australian Government.
