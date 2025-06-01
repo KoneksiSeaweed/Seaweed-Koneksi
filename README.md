@@ -13,7 +13,7 @@ The results of this research are still being compiled into an article. This will
 The benchmark dataset consists of remote sensing images from three different sources:
 
 1. **Sentinel-2** : <br/> Multispectral imagery with a spatial resolution of 10 meters. The processing level is L2A or Bottom-of-atmosphere (BOA) reflectance. The channels include `B4, B3, B2, and B8` (Red, Green, Blue, and NIR).
-2. **PlanetScope** : <br/> High-resolution imagery with a spatial resolution of 3 meters. The PlanetScope SuperDove `(PSB.SD)` sensor has been corrected to surface reflectance and harmonized. Here we use an 8-channel PlanetScope image, which we then reduce so that only `B2, B3, and B6` (Blue, Green, and NIR) channels remain.
+2. **PlanetScope** : <br/> High-resolution imagery with a spatial resolution of 3 meters. The PlanetScope SuperDove `(PSB.SD)` sensor has been corrected to surface reflectance and harmonized. Here we use an 8-channel PlanetScope image, which we then reduce so that only `B2, B3, and B6` (Blue, Green, and Red) channels remain.
 3. **Pleiades** : <br/> Very high-resolution imagery with a spatial resolution of 2 meters. We have applied the orthorectification process to this image. Pleiades imagery includes four channels: `B1, B2, B3, and B4` (Red, Green, Blue, and NIR).
 
 Each dataset is provided in `.tiff` format with an image size of `128x128` pixels. The dataset includes corresponding label files for each image, where:
